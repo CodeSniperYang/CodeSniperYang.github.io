@@ -172,7 +172,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#小酥姐姐<br>啊哈哈，我的博客终于搭建好了呀，我太兴奋了啊！！！</p>
+        <p>#搭建个人博客<br>经过千辛万苦，终于把自己的第一条博客搭建好了，什么<br>千辛万苦，不过就是一个几个小时而已，再加上git的下载，<br>幸好提前一天注册了GitHub的账号，并且玩了一下，才会搭建的这么简单。<br>太开心了啊，哈哈~</p>
+<p>下面是基于github平台的个人博客的搭建的命令，不需要购买服务器和域名<br>有空详细讲一讲自己搭建完成的第二天干了什么事情。</p>
+<p>学习笔记！<br>— #安装Nodejs<br>node -v #查看node版本<br>npm -v #查看npm版本<br>npm install -g cnpm –registry=<a href="http://registry.npm.taobao.org" target="_blank" rel="noopener">http://registry.npm.taobao.org</a> #安装淘宝的cnpm 管理器<br>cnpm -v #查看cnpm版本<br>cnpm install -g hexo-cli #安装hexo框架<br>hexo -v #查看hexo版本<br>mkdir blog #创建blog目录<br>cd blog #进入blog目录<br>sudo hexo init #生成博客 初始化博客<br>hexo s #启动本地博客服务<br><a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> #本地访问地址<br>hexo n “我的第一篇文章” #创建新的文章<br>#返回blog目录<br>hexo clean #清理<br>hexo g #生成<br>#Github创建一个新的仓库 YourGithubName.github.io<br>cnpm install –save hexo-deployer-git #在blog目录下安装git部署插件</p>
+<hr>
+<h2 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="#配置_config.yml"></a>#配置_config.yml</h2><h1 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h1><h2 id="Docs-https-hexo-io-docs-deployment-html"><a href="#Docs-https-hexo-io-docs-deployment-html" class="headerlink" title="Docs: https://hexo.io/docs/deployment.html"></a>Docs: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">https://hexo.io/docs/deployment.html</a></h2><p>deploy:<br>type: git<br>repo: <a href="https://github.com/YourGithubName/YourGithubName.github.io.git" target="_blank" rel="noopener">https://github.com/YourGithubName/YourGithubName.github.io.git</a><br>branch: master</p>
+<hr>
+<p>hexo d #部署到Github仓库里<br><a href="https://YourGithubName.github.io/" target="_blank" rel="noopener">https://YourGithubName.github.io/</a> #访问这个地址可以查看博客</p>
+<p>git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia #下载yilia主题到本地</p>
+<p>#修改hexo根目录下的 _config.yml 文件 ： theme: yilia</p>
+<p>hexo c #清理一下<br>hexo g #生成<br>hexo d #部署到远程Github仓库</p>
 
       
 
@@ -235,7 +244,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+        <p>###以下巴拉巴拉一大推，其实就是告诉你怎么使用hexo，还有就是kd的格式编写</p>
+<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
