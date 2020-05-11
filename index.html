@@ -154,6 +154,95 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-learnJava" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/11/learnJava/">learnJava</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/11/learnJava/" class="archive-article-date">
+  	<time datetime="2020-05-11T12:03:16.224Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#Java 学习笔记<br>######其实并没有什么用，只是用来训练一下md的写法和hexo的一些命令，Java是一个完全面向对象的东西，有过C和C++的基础，学起来会狠轻松，稍微写一下与C不同的东西<br><strong>public</strong>：可以省略，默认为public<br><strong>创建新文件</strong>：File-&gt;new-&gt;java peoject-&gt;sre-&gt;右键-&gt;new-&gt;class<br><strong>调节字体快捷键</strong>: ctrl-+=(_-)<br><strong>扩展以及快捷键</strong>:<br>syso+(alt+/) ： 扩展成为System.out.println();<br>main+(alt+/) ：扩展main<br>ctrl+shift+o ：import java.util.Scanner;（需要再用了函数的情况下导入）<br>ctrl + 鼠标点击：   查看详情<br>Ctrl+m :左右框消失<br>Scanner scanner = new Scanner(System.in);<br>鼠标选择部分代码 然后ctrl+shift+/ 注释<br>ctrl+d ： 删除一行</p>
+<p><strong>float的最大值（同理可求最小值，double类似）</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> a;</span><br><span class="line">a = scanner.nextFloat();</span><br></pre></td></tr></table></figure>
+<p><strong>注释</strong>：和c一样，加了一个文档注释/**  然后回车<br><strong>标识符</strong>：数字 字母 下划线 美元符号$</p>
+<p><strong>数据类型</strong>：<br>byte(位) 8位<br>long 64位<br>boolean 布尔类型 true||false<br>小数默认是double类型,所以必须加一个f表示float类型<br>float f = 1.1f;<br>//Unicode表示字符<br>char c1 = ‘\u66f9’;    \u+编码  上网查</p>
+<p>&amp;&amp;短路与  前面不满足条件 直接返回  效率高<br>&amp;不断路与 所有判断完才返回<br>^ 异或 关于表达式</p>
+<p>break结束本层循环<br>break加标签(outer)是跳出被标签标记的循环</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">outer:</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++) &#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=i;j++) &#123;</span><br><span class="line">		<span class="keyword">if</span>(i==<span class="number">4</span>)  <span class="keyword">break</span> outer;</span><br><span class="line">		System.out.print(i + <span class="string">"*"</span> + j + <span class="string">"="</span> +(i*j)+<span class="string">"  "</span>);<span class="comment">//九九乘法表</span></span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println();<span class="comment">//空行</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>return 直接跳出循环</p>
+<p><strong>数组</strong>定义的两种方式： //栈区初始化为0  默认值是0<br>int[]      []int<br><strong>静态初始化</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[] = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>动态初始化</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>]; 二维静态初始化：</span><br><span class="line"><span class="keyword">int</span> a[][] = <span class="keyword">new</span> <span class="keyword">int</span>[][] &#123;&#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>&#125;,&#123;<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>&#125;,&#123;<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>&#125;&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>二维动态初始化</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[][] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>][<span class="number">3</span>];</span><br></pre></td></tr></table></figure>
+<p><strong>遍历数组</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;arr.length;i++) </span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> j:a)     <span class="comment">//foreach方法遍历</span></span><br><span class="line">	System.out.println(j);     <span class="comment">//每次将数组中的值赋给j</span></span><br></pre></td></tr></table></figure>
+<p><strong>类和对象</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Person yy;<span class="comment">//定义对象</span></span><br><span class="line">yy = <span class="keyword">new</span> Person();<span class="comment">//对象实例化</span></span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line">Person yy = <span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure>
+<p><strong>函数</strong><br>对于函数参数的传递，若传送的是<em>对象</em>，则传递的是引用(地址)，在函数中改变对象的值，对象的值会真的改变</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//不固定参数的写法 类型+...然后起个名字</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">HOBBIES</span><span class="params">(String ...hobbies)</span> </span>&#123;    <span class="comment">//String类型</span></span><br><span class="line">		<span class="keyword">for</span>(String s:hobbies)</span><br><span class="line">			System.out.println(s+<span class="string">" "</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">PRINTINT</span><span class="params">(<span class="keyword">int</span> ...numbers)</span> </span>&#123;      <span class="comment">//int类型</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i:numbers)</span><br><span class="line">			System.out.println(i);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Person yy = <span class="keyword">new</span> Person();</span><br><span class="line">		yy.HOBBIES(<span class="string">"aaa"</span>,<span class="string">"bbb"</span>,<span class="string">"ccc"</span>);</span><br><span class="line">		yy.PRINTINT(<span class="number">1</span>,<span class="number">321</span>,<span class="number">13</span>,<span class="number">56</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>返回值</strong><br>返回值和c差不多，不在赘述</p>
+<p>##方法<br><strong>方法的重载</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">study</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"方法1:"</span>+(a+b));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"方法2:"</span>+(a+b+c));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">double</span> b)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"方法3:"</span>+(a+b));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		study dx = <span class="keyword">new</span> study();</span><br><span class="line">		dx.add(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">		dx.add(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);</span><br><span class="line">		dx.add(<span class="number">1</span>,<span class="number">2.456</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//如果add有返回值不同，接收的变量类型和add的返回值类型相对应</span></span><br></pre></td></tr></table></figure>
+<p><strong>静态调用方法</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">study</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">func</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"静态"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		study.func();    <span class="comment">//写类名，如果new了一个对象，调用会有警告</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>递归调用方法</strong>：：不赘述</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/11/learnJava/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-my-first-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
