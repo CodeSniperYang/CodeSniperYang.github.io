@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | CodeSniperYang</title>
+  <title>c++新特性学习笔记 | CodeSniperYang</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个小菜鸡，但还是喜欢别人叫我小杨哥哥">
-<meta property="og:type" content="website">
-<meta property="og:title" content="CodeSniperYang">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="c++新特性学习笔记这里有一些是新特性，有一些是为了描述新特性另外说明的一些东西。  Variadic Templates  …参考网址：https:&#x2F;&#x2F;blog.csdn.net&#x2F;zwvista&#x2F;article&#x2F;details&#x2F;5450759?locationNum&#x3D;11&amp;fps&#x3D;1这个好像和Java的类似，需要注意的是新名词的出现，&#x2F;&#x2F;模板参数包，函数参数包，解包运算符；实现方式是递归">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c++新特性学习笔记">
+<meta property="og:url" content="http://yoursite.com/2020/06/30/c++newfeatures/index.html">
 <meta property="og:site_name" content="CodeSniperYang">
-<meta property="og:description" content="一个小菜鸡，但还是喜欢别人叫我小杨哥哥">
+<meta property="og:description" content="c++新特性学习笔记这里有一些是新特性，有一些是为了描述新特性另外说明的一些东西。  Variadic Templates  …参考网址：https:&#x2F;&#x2F;blog.csdn.net&#x2F;zwvista&#x2F;article&#x2F;details&#x2F;5450759?locationNum&#x3D;11&amp;fps&#x3D;1这个好像和Java的类似，需要注意的是新名词的出现，&#x2F;&#x2F;模板参数包，函数参数包，解包运算符；实现方式是递归">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-30T14:15:37.723Z">
+<meta property="article:modified_time" content="2020-06-30T14:25:03.280Z">
 <meta property="article:author" content="CodeSniperYang">
 <meta name="twitter:card" content="summary">
   
@@ -152,265 +154,193 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-c++newfeatures" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      c++新特性学习笔记
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/30/c++newfeatures/" class="archive-article-date">
+
+        
+        <a href="/2020/06/30/c++newfeatures/" class="archive-article-date">
   	<time datetime="2020-06-30T14:15:37.723Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-30</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/30/c++newfeatures/">c++新特性学习笔记</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="c-新特性学习笔记"><a href="#c-新特性学习笔记" class="headerlink" title="c++新特性学习笔记"></a>c++新特性学习笔记</h1><p><strong>这里有一些是新特性，有一些是为了描述新特性另外说明的一些东西。</strong></p>
+<hr>
+<h3 id="Variadic-Templates-…"><a href="#Variadic-Templates-…" class="headerlink" title="Variadic Templates  …"></a>Variadic Templates  …</h3><p>参考网址：<a href="https://blog.csdn.net/zwvista/article/details/5450759?locationNum=11&amp;fps=1" target="_blank" rel="noopener">https://blog.csdn.net/zwvista/article/details/5450759?locationNum=11&amp;fps=1</a><br>这个好像和Java的类似，需要注意的是新名词的出现，//模板参数包，函数参数包，解包运算符；<br>实现方式是递归。</p>
+<h2 id="forward"><a href="#forward" class="headerlink" title="forward"></a>forward</h2><p><strong>请先看下面的右值引用</strong><br><a href="https://www.cnblogs.com/xiaoshiwang/p/9589008.html" target="_blank" rel="noopener">https://www.cnblogs.com/xiaoshiwang/p/9589008.html</a><br>写法:<strong>forward<T>(t)</strong>,其中t是T类型的对象。<br>在这之前请先了解<strong>左值引用</strong>和<strong>右值引用</strong>。<br>举例：func(100);//实参为右值引用。<br>还有一个<strong>move</strong>函数，就是转化为右值的。move() </p>
+<h2 id="右值引用"><a href="#右值引用" class="headerlink" title="右值引用"></a>右值引用</h2><p>于心不忍，还是给参考连接。<br><a href="https://blog.csdn.net/qq527703883/article/details/60141034?locationNum=7&amp;fps=1" target="_blank" rel="noopener">https://blog.csdn.net/qq527703883/article/details/60141034?locationNum=7&amp;fps=1</a><br>我感觉就是看这个 总的语句是否分配了空间 ，没有分配就是右值引用<br><a href="https://www.bilibili.com/video/BV1n4411R7q9?p=23" target="_blank" rel="noopener">B站侯捷老师的视频</a> ，这个视频对于的右值引用做了十分详细的讲述，后面还有move和forward的讲解，很深入。强力推荐。</p>
+<h2 id="nullptr-nullptr-auto"><a href="#nullptr-nullptr-auto" class="headerlink" title="nullptr nullptr auto"></a>nullptr nullptr auto</h2><p>这三个东西挺简单的，前两个之间看源码<br>auto是一个很好用的东西，让编译器推导变量类型。<br>示例：for(vector<int>::iterator it=v.begin();it!=v.end();it++)可以写成<br>：for(auto it=v.begin();it!=v.end();it++)</p>
+<h2 id="C-11下的初始化"><a href="#C-11下的初始化" class="headerlink" title="C++11下的初始化"></a>C++11下的初始化</h2><p>为了统一化管理，引入<strong>{}花括号</strong>初始化。<br><strong>initializer_list</strong>：这个东西可以支持我们初始化的花括号使用<br>在使用vector<int> vec1{ 1,2,3,4,5 };时，会自动生成initializer_list，initializer_list内含一个array的头指针和长度<br>参考网址：<a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1593334114&amp;ver=2427&amp;signature=Dly5GAhXZ8v*vMicn54oEe8jlhPoK-5GTLlA-*VpY1On1J9l7VsvuqLU3jQvsigf3QKraAujVskn6yZqi3kVLccyK6PdBbpOK44zhhCQGa-UGxUSKkNnHNEEMkbGycql&amp;new=1" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?src=11&amp;timestamp=1593334114&amp;ver=2427&amp;signature=Dly5GAhXZ8v*vMicn54oEe8jlhPoK-5GTLlA-*VpY1On1J9l7VsvuqLU3jQvsigf3QKraAujVskn6yZqi3kVLccyK6PdBbpOK44zhhCQGa-UGxUSKkNnHNEEMkbGycql&amp;new=1</a><br><strong>注意：</strong>虽然很长，但是感觉讲的很好。但是我认为有一个错误，源码是没有内含数组的，只是拿了一个指针和长度进来。可能版本不同把，我就没有深究了。对于它的使用标准库真是大量用了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a;<span class="built_in">cin</span>&gt;&gt;a;</span><br><span class="line"><span class="keyword">int</span> b=<span class="number">2</span>;</span><br><span class="line"><span class="keyword">int</span> c=<span class="number">3</span>;</span><br><span class="line"><span class="keyword">int</span> d=<span class="built_in">max</span>( &#123;a,b,c&#125;  );<span class="comment">//香  发现新大陆啊</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;d&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<h2 id="explicit"><a href="#explicit" class="headerlink" title="explicit"></a>explicit</h2><p>多用于构造函数中，explicit构造函数是用来防止隐式转换的。很小的一个东西，看之前如果知道<strong>类对象的隐式转换</strong>和<strong>显示转换</strong>就很容易懂了。</p>
+<h3 id="新for循环"><a href="#新for循环" class="headerlink" title="新for循环"></a>新for循环</h3><p>for( decl : coll ){ statement}<br>搭配auto香的一批，该有全局的begin()和end(),参数放容器。<br><a href="https://www.jb51.net/article/87283.htm这里有它的底层源码，底层还是用了常用的for，穿入头指针和尾指针，头指针++，当头指针等于尾指针时退出循环。右值引用，for结束则析构。" target="_blank" rel="noopener">https://www.jb51.net/article/87283.htm这里有它的底层源码，底层还是用了常用的for，穿入头指针和尾指针，头指针++，当头指针等于尾指针时退出循环。右值引用，for结束则析构。</a></p>
+<h3 id="default-，-delete"><a href="#default-，-delete" class="headerlink" title="=default ，=delete"></a>=default ，=delete</h3><p><a href="https://www.cnblogs.com/Li-F/p/11517192.html" target="_blank" rel="noopener">https://www.cnblogs.com/Li-F/p/11517192.html</a><br><a href="https://blog.csdn.net/u010640235/article/details/51286445" target="_blank" rel="noopener">https://blog.csdn.net/u010640235/article/details/51286445</a><br>在写代码的时候，’=’是不能省略的，和两个关键字是一个整体，或者说，这就是一个关键字。<br>生成类的时候，会自动调动四种函数，=delete会禁用删除当前函数，=dafault用于显式要求编译器提供合成版本的四大函数。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Text</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> x,y;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Text t1;</span><br><span class="line">    <span class="function">Text <span class="title">t2</span><span class="params">(t1)</span></span>;</span><br><span class="line">    Text t3;</span><br><span class="line">    t3 = t1;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;   <span class="comment">//当创建一个类的时候，编译器会自动创建四种函数，构造，析构，拷贝，复制。</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="Alias-template"><a href="#Alias-template" class="headerlink" title="Alias template"></a>Alias template</h2><p>用using定义别名，这个和typedef类似，一个最大的不同是using可以别名化模板。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">using</span> Vec = <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;T, MyAlloc&lt;T&gt;&gt;;<span class="comment">//给一个化名</span></span><br><span class="line">Vec&lt;<span class="keyword">int</span>&gt; coll;</span><br><span class="line"><span class="comment">//代码摘自侯捷老师的课程</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Template-Template-Parameter"><a href="#Template-Template-Parameter" class="headerlink" title="Template Template Parameter"></a>Template Template Parameter</h3><p>模板模板参数，这个感觉用的很少，想深究的自己去看。</p>
+<h3 id="Type-Alias"><a href="#Type-Alias" class="headerlink" title="Type Alias"></a>Type Alias</h3><p>使用using定义别名，和typedef功能一样<br>示例：using func = void(*)(int,int);<br>扩充，在string头文件中，都有basic_string<char> string;<br>basic_string的源码在它的.h文件里面，三千多行，我就不看了。</p>
+<h3 id="noexcept"><a href="#noexcept" class="headerlink" title="noexcept"></a>noexcept</h3><p><a href="https://blog.csdn.net/xiaoguyin_/article/details/79798544" target="_blank" rel="noopener">https://blog.csdn.net/xiaoguyin_/article/details/79798544</a><br>当函数不会有异常的时候，是应只当noexcept，并且是在关键字实在函数的声明或者是定义之后的。<br>对于异常，侯捷老师有专门的一讲课，实际开发中异常处理经常出现，值得深究。</p>
+<h3 id="override"><a href="#override" class="headerlink" title="override"></a><strong>override</strong></h3><p><a href="https://blog.csdn.net/fanyun_01/article/details/79122136" target="_blank" rel="noopener">https://blog.csdn.net/fanyun_01/article/details/79122136</a><br>当父类的虚函数在子类中实现的时候使用，可以避免派生类中忘记重写虚函数的错误<br>当参数不一致时，编译器会报错给予提示</p>
+<h3 id="final"><a href="#final" class="headerlink" title="final"></a>final</h3><p>表明当前类是不可继承的。<br>说白了就是当前类是断子绝孙的，只有爸爸，没有儿子。</p>
+<p>另外，<strong>函数后面加上const</strong>，<a href="https://wenwen.sogou.com/z/q825346133.htm" target="_blank" rel="noopener">https://wenwen.sogou.com/z/q825346133.htm</a><br>说明当前函数为只读操作</p>
+<h3 id="decltype"><a href="#decltype" class="headerlink" title="decltype"></a>decltype</h3><p><a href="http://c.biancheng.net/view/3722.html" target="_blank" rel="noopener">http://c.biancheng.net/view/3722.html</a>      这篇讲的比较深入<br>编译器自行推导类型。<br><a href="https://mp.weixin.qq.com/s?src=11&timestamp=1593481824&ver=2431&signature=HGwbJf9FtH*mOqjDEWs-9VBW5M8RQ*z8HWw8y54yjODega8bIsAPmlJ4etvhIcg*AQ9fb8PowCsjNhMnmlL7b2Ep1MFqArwTWhIpg32mjCIfwkGceVrSwIK46ZRwfySe&new=1" target="_blank" rel="noopener">这篇的使用比较直观</a></p>
+<h3 id="lambda"><a href="#lambda" class="headerlink" title="lambda"></a>lambda</h3><p><a href="[https://blog.csdn.net/u012198575/article/details/83339182?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522159348755419195239812644%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=159348755419195239812644&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~baidu_landing_v2~default-1-83339182.first_rank_v2_rank_v25&utm_term=c%2B%2B+lambdas](https://blog.csdn.net/u012198575/article/details/83339182?ops_request_misc=%7B%22request%5Fid%22%3A%22159348755419195239812644%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&request_id=159348755419195239812644&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~baidu_landing_v2~default-1-83339182.first_rank_v2_rank_v25&utm_term=c%2B%2B+lambdas)">csdn参考地址</a><br><a href="https://www.bilibili.com/video/BV1p4411v7Dh?p=14" target="_blank" rel="noopener">B站侯捷老师视频</a><br>知道语法即可，深入请自行了解。</p>
+<h3 id="tuple"><a href="#tuple" class="headerlink" title="tuple"></a>tuple</h3><p><a href="https://blog.csdn.net/sevenjoin/article/details/88420885?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" target="_blank" rel="noopener">csdn参考连接</a><br>可以看作是一个结构体或者是泛化的pair，只不过配备了很多的函数进行操作。</p>
+<hr>
+<p>用于给各位学习者参考，仅供参考。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="\assets\img\alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="\assets\img\weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/30/c++newfeatures/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/20/BigDecimal_and_BigInteger/" class="archive-article-date">
-  	<time datetime="2020-05-20T13:43:33.553Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/20/BigDecimal_and_BigInteger/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">大数和高精度运算</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/20/BigDecimal_and_BigInteger/">大数和高精度运算</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/15/su/" class="archive-article-date">
-  	<time datetime="2020-05-15T12:07:24.702Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/15/su/">云想衣裳花想容</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/14/static/" class="archive-article-date">
-  	<time datetime="2020-05-14T13:42:28.918Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/14/static/">C++中static的学习</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/13/operator/" class="archive-article-date">
-  	<time datetime="2020-05-13T15:05:03.651Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/13/operator/">运算符重载C++</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/11/use-vim/" class="archive-article-date">
-  	<time datetime="2020-05-11T13:23:12.028Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/11/use-vim/">vim以及其他常用命令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/11/learnJava/" class="archive-article-date">
-  	<time datetime="2020-05-11T12:03:16.224Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/11/learnJava/">Java 学习笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/09/build-blog/" class="archive-article-date">
-  	<time datetime="2020-05-09T12:22:14.247Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/09/build-blog/">搭建个人博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/09/hello-world/" class="archive-article-date">
-  	<time datetime="2020-05-09T12:12:03.006Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/09/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -433,8 +363,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
