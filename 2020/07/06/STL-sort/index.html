@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | CodeSniperYang</title>
+  <title>sort学习小记 | CodeSniperYang</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个小菜鸡，但还是喜欢别人叫我小杨哥哥">
-<meta property="og:type" content="website">
-<meta property="og:title" content="CodeSniperYang">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="STL-sort学习学习sort发现不错的文章，摘录一下。并且做一个自己的理解，默认的sort下排序，即升序。 前景知识 三种排序快速排序：视频入口 B站的视频，简单的讲了一下快排，并且手把手的带你简单的实现了一遍。优化：优化参考1 优化参考21.三数取中法，在头元素，尾元素，中间元素上，取得中位数。2.随机选取基准，用随机数代替基准点。3.插排的引入，当递归到一定程度后，last和first中间">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sort学习小记">
+<meta property="og:url" content="http://yoursite.com/2020/07/06/STL-sort/index.html">
 <meta property="og:site_name" content="CodeSniperYang">
-<meta property="og:description" content="一个小菜鸡，但还是喜欢别人叫我小杨哥哥">
+<meta property="og:description" content="STL-sort学习学习sort发现不错的文章，摘录一下。并且做一个自己的理解，默认的sort下排序，即升序。 前景知识 三种排序快速排序：视频入口 B站的视频，简单的讲了一下快排，并且手把手的带你简单的实现了一遍。优化：优化参考1 优化参考21.三数取中法，在头元素，尾元素，中间元素上，取得中位数。2.随机选取基准，用随机数代替基准点。3.插排的引入，当递归到一定程度后，last和first中间">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-06T09:47:09.385Z">
+<meta property="article:modified_time" content="2020-07-06T09:47:09.386Z">
 <meta property="article:author" content="CodeSniperYang">
 <meta name="twitter:card" content="summary">
   
@@ -152,292 +154,219 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-STL-sort" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      sort学习小记
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/06/STL-sort/" class="archive-article-date">
+
+        
+        <a href="/2020/07/06/STL-sort/" class="archive-article-date">
   	<time datetime="2020-07-06T09:47:09.385Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-06</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/06/STL-sort/">sort学习小记</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="STL-sort学习"><a href="#STL-sort学习" class="headerlink" title="STL-sort学习"></a>STL-sort学习</h1><p>学习sort发现不错的文章，摘录一下。<br>并且做一个自己的理解，默认的sort下排序，即升序。</p>
+<h3 id="前景知识-三种排序"><a href="#前景知识-三种排序" class="headerlink" title="前景知识 三种排序"></a>前景知识 三种排序</h3><p><strong>快速排序</strong>：<a href="https://www.bilibili.com/video/BV1a741127ym?from=search&seid=5164983531185707913" target="_blank" rel="noopener">视频入口</a> B站的视频，简单的讲了一下快排，并且手把手的带你简单的实现了一遍。<br>优化：<a href="https://blog.csdn.net/insistGoGo/article/details/7785038?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase" target="_blank" rel="noopener">优化参考1</a> <a href="https://blog.csdn.net/lingling_nice/article/details/80943231?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" target="_blank" rel="noopener">优化参考2</a><br>1.三数取中法，在头元素，尾元素，中间元素上，取得中位数。<br>2.随机选取基准，用随机数代替基准点。<br>3.插排的引入，当递归到一定程度后，last和first中间元素个数不多，并且已经基本有序，改用插排。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n = <span class="number">1000</span>,a[<span class="number">1000</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = a[i];</span><br><span class="line">    a[i] = a[j];</span><br><span class="line">    a[j] = t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l&gt;r) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">int</span> i = l,</span><br><span class="line">        j = r,</span><br><span class="line">        index = l;</span><br><span class="line">    <span class="keyword">while</span>(i!=j)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;j&amp;&amp;a[j]&gt;=a[index]) j--;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;j&amp;&amp;a[i]&lt;=a[index]) i++;</span><br><span class="line">        <span class="keyword">if</span>(i&lt;j) swap(i,j);</span><br><span class="line">    &#125;</span><br><span class="line">    swap(index,i);</span><br><span class="line">    quick_sort(l,i<span class="number">-1</span>);</span><br><span class="line">    quick_sort(i+<span class="number">1</span>,r);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    srand(time(<span class="literal">NULL</span>));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        a[i] = rand();</span><br><span class="line">    quick_sort(<span class="number">0</span>,n<span class="number">-1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i!=n;i++)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;a[i]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<hr>
+<p><strong>插入排序</strong>：很简单的东西，要多说一点的是，<br>它在数据大致有序的情况表现非常好，可以达到O(N)。<br><a href="[https://blog.csdn.net/zxm317122667/article/details/83344178?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522159387384419726869032198%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=159387384419726869032198&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-3-83344178.first_rank_ecpm_v3_pc_rank_v2&utm_term=%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F](https://blog.csdn.net/zxm317122667/article/details/83344178?ops_request_misc=%7B%22request%5Fid%22%3A%22159387384419726869032198%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&request_id=159387384419726869032198&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-3-83344178.first_rank_ecpm_v3_pc_rank_v2&utm_term=插入排序)">参考入口地址</a> 虽然笔者是Java的，不过丝毫不影响对思路的理解</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[<span class="number">1000</span>];</span><br><span class="line"><span class="keyword">int</span> len = <span class="number">1000</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert_sort</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;len;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> key = a[i]; <span class="comment">//选取基准值</span></span><br><span class="line">        <span class="keyword">int</span> j = i<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span> (j&gt;=<span class="number">0</span> &amp;&amp; a[j] &gt; key)  </span><br><span class="line">        &#123;</span><br><span class="line">            a[j+<span class="number">1</span>] = a[j];    <span class="comment">//往后移动</span></span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        a[j+<span class="number">1</span>] = key;   <span class="comment">//选取基准值的位置并且插入</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    srand(time(<span class="literal">NULL</span>));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">        a[i] = rand();    <span class="comment">//输入</span></span><br><span class="line"></span><br><span class="line">    insert_sort(); 				<span class="comment">//插排</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;a[i]&lt;&lt;<span class="built_in">endl</span>;  <span class="comment">//输出</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+
+
+<hr>
+<p><strong>堆排序</strong>：<a href="https://www.bilibili.com/video/BV1Eb41147dK?from=search&seid=11348061540197705082" target="_blank" rel="noopener">B站视频入口</a> 讲得很好，也是一样，讲完原理之后敲代码了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n=<span class="number">1000</span>,tree[<span class="number">1000</span>] = &#123;<span class="number">1</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">0</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">heapify</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> pa)</span> <span class="comment">//有n个节点，对第i个节点做heapify</span></span></span><br><span class="line"><span class="function"></span>&#123;													<span class="comment">//在第i个节点进行调整，在i的左右儿子中选出最大，进行交换</span></span><br><span class="line">    <span class="keyword">if</span>(pa&gt;=n) <span class="keyword">return</span> ;		<span class="comment">//如果左儿子大，交换。然后在左儿子中的孩子中选出最大，重复下去</span></span><br><span class="line">    <span class="keyword">int</span> lson = <span class="number">2</span>*pa+<span class="number">1</span>;		<span class="comment">//自己画图理解</span></span><br><span class="line">    <span class="keyword">int</span> rson = <span class="number">2</span>*pa+<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> maxn = pa;</span><br><span class="line">    <span class="keyword">if</span>(lson&lt;n&amp;&amp;tree[lson]&gt;tree[maxn]) maxn = lson;</span><br><span class="line">    <span class="keyword">if</span>(rson&lt;n&amp;&amp;tree[rson]&gt;tree[maxn]) maxn = rson;</span><br><span class="line">    <span class="keyword">if</span>(pa!=maxn) &#123;</span><br><span class="line">        swap(tree[maxn],tree[pa]);</span><br><span class="line">        heapify(n,maxn);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">heap_build</span><span class="params">(<span class="keyword">int</span> n)</span><span class="comment">//有n个节点   heap_build的操作是制造根堆，0元素是最值</span></span></span><br><span class="line"><span class="function"></span>&#123;																	<span class="comment">//根堆建好之后，堆根节点的每一次heapify都能将次大值选到第二层</span></span><br><span class="line">    <span class="keyword">int</span> lastnode = n<span class="number">-1</span>;<span class="comment">//最后一个节点</span></span><br><span class="line">    <span class="keyword">int</span> startpa = (lastnode<span class="number">-1</span>)/<span class="number">2</span>; <span class="comment">//最后一个父节点</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=startpa; i&gt;=<span class="number">0</span>; i--) <span class="comment">//逆序对每一个父节点做heapify</span></span><br><span class="line">        heapify(n,i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">heap_sort</span><span class="params">(<span class="keyword">int</span> n)</span> <span class="comment">//有n个节点</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    heap_build(n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=n<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">    &#123;</span><br><span class="line">        swap(tree[<span class="number">0</span>],tree[i]);</span><br><span class="line">        heapify(i,<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    heapify(n,0);</span></span><br><span class="line"><span class="comment">// 7 8 4 5 1 9 6 3 2 0</span></span><br><span class="line"><span class="comment">//    heap_build(n);</span></span><br><span class="line"><span class="comment">// 9 8 6 5 7 4 1 3 2 0    这些数据是初写的时候用的，数量少，便于理解</span></span><br><span class="line">    srand(time(<span class="literal">NULL</span>));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        tree[i] = rand();</span><br><span class="line"></span><br><span class="line">    heap_sort(n);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i:tree)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h1><p><a href="[https://blog.csdn.net/qq_16836151/article/details/51527160?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522159378757819195188462580%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=159378757819195188462580&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v3~pc_rank_v2-1-51527160.first_rank_ecpm_v3_pc_rank_v2&utm_term=sort%E6%BA%90%E7%A0%81](https://blog.csdn.net/qq_16836151/article/details/51527160?ops_request_misc=%7B%22request%5Fid%22%3A%22159378757819195188462580%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&request_id=159378757819195188462580&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v3~pc_rank_v2-1-51527160.first_rank_ecpm_v3_pc_rank_v2&utm_term=sort源码)">参考网址入口</a> 这篇是我见过写的最好的了。没有找到侯捷老师的视频。<br>以下很多引用自原文：<br><strong>（1）</strong>在数据量很大时采用正常的快速排序，此时效率为O(logN)。//最好情况<br><strong>（2）</strong>一旦分段后的数据量小于某个阈值，就改用插入排序，因为此时这个分段是基本有序的，这时效率可达O(N)。//最好情况<br><strong>（3）</strong>在递归过程中，如果递归层次过深，分割行为有恶化倾向时，它能够自动侦测出来，使用堆排序来处理，在此情况下，使其效率维持在堆排序的O(N logN)，但这又比一开始使用堆排序好。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1  sort()</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">RandomAccessIterator</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">inline</span> <span class="title">void</span> <span class="title">sort</span>(<span class="title">RandomAccessIterator</span> <span class="title">first</span>, <span class="title">RandomAccessIterator</span> <span class="title">last</span>) &#123;</span></span><br><span class="line">    <span class="keyword">if</span> (first != last) &#123;</span><br><span class="line">        __introsort_loop(first, last, value_type(first), __lg(last - first) * <span class="number">2</span>);     <span class="comment">//__lg(last - first) * 2 这是计算深度阈值 以2为底的对数*2</span></span><br><span class="line">        __final_insertion_sort(first, last); <span class="comment">//满足(2)</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="comment">//首先调用__introsort_loop，在里面有 快排，堆排 的调用</span></span><br><span class="line"><span class="comment">//其次是__final_insertion_sort插排的调用</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2     __introsort_loop()</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">RandomAccessIterator</span>, <span class="title">class</span> <span class="title">T</span>, <span class="title">class</span> <span class="title">Size</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> __<span class="title">introsort_loop</span>(<span class="title">RandomAccessIterator</span> <span class="title">first</span>,</span></span><br><span class="line"><span class="class">                      <span class="title">RandomAccessIterator</span> <span class="title">last</span>, <span class="title">T</span>*,</span></span><br><span class="line"><span class="class">                      <span class="title">Size</span> <span class="title">depth_limit</span>)</span></span><br><span class="line"><span class="class">&#123;</span>    <span class="comment">//__introsort_loop()  begin--------------------------------------</span></span><br><span class="line">    <span class="keyword">while</span> (last - first &gt; __stl_threshold) &#123; <span class="comment">//(2)的条件 </span></span><br><span class="line"><span class="comment">//__stl_threshold的定义：const int __stl_threshold = 16; </span></span><br><span class="line">        <span class="keyword">if</span> (depth_limit == <span class="number">0</span>) &#123;   <span class="comment">//满足(3) 调用堆排</span></span><br><span class="line">            partial_sort(first, last, last);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        --depth_limit; </span><br><span class="line">        RandomAccessIterator cut = __unguarded_partition </span><br><span class="line">          (first, last, T(__median(*first, *(first + (last - first)/<span class="number">2</span>),</span><br><span class="line">                                   *(last - <span class="number">1</span>)))); <span class="comment">//__median三值取中法进行快排</span></span><br><span class="line">          <span class="comment">//cut = __unguarded_partition(first,last,中值); </span></span><br><span class="line">        __introsort_loop(cut, last, value_type(first), depth_limit);<span class="comment">//递归调用自己</span></span><br><span class="line">        last = cut;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="comment">//__introsort_loop()  end---------------------------------------------</span></span><br><span class="line"><span class="comment">/*while循环的条件：当快排到一定程度的时候，小区间的个数会变的很少，元素差不多是有序的，这个时候递归回去，为的是结束退出该函数调用插排。当元素个数很小的时候，继续递归快排付出的代价是要比插排大得多的。这个临界值(__stl_threshold) 16的确定感觉恰到好处。</span></span><br><span class="line"><span class="comment">depth_limit的确定：假设是八个元素(实际上调用插排，我只是举例子)，递归可以认为是这样的</span></span><br><span class="line"><span class="comment">   8 </span></span><br><span class="line"><span class="comment"> 4   4</span></span><br><span class="line"><span class="comment">2 2 2 2 ，六次，基本上是log以2为底元素的个数的2倍，这就是调用此函数的时候是</span></span><br><span class="line"><span class="comment">__lg(last - first) * 2的原因。</span></span><br><span class="line"><span class="comment">之前说，当递归层数太深，会调用堆排就是在这里了。</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 3 __unguarded_partition()  快排</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">RandomAccessIterator</span>, <span class="title">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">RandomAccessIterator</span> __<span class="title">unguarded_partition</span>(<span class="title">RandomAccessIterator</span> <span class="title">first</span>, </span></span><br><span class="line"><span class="class">                                           <span class="title">RandomAccessIterator</span> <span class="title">last</span>, </span></span><br><span class="line"><span class="class">                                           <span class="title">T</span> <span class="title">pivot</span>) &#123;</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="keyword">while</span> (*first &lt; pivot) ++first;  </span><br><span class="line">        --last;</span><br><span class="line">        <span class="keyword">while</span> (pivot &lt; *last) --last;</span><br><span class="line">        <span class="keyword">if</span> (!(first &lt; last)) <span class="keyword">return</span> first;</span><br><span class="line">        iter_swap(first, last);</span><br><span class="line">        ++first;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="comment">//这里的--last;和++first; 相当于上述我的快排代码中的quick_sort(l,i-1);中的i-1和i+1</span></span><br><span class="line"><span class="comment">/*关于为什么没有边界判断，文章中说的很清楚</span></span><br><span class="line"><span class="comment">我觉得是有两个原因，最主要还是第二个，举两个例子。</span></span><br><span class="line"><span class="comment">(1) 如果存的是 1 2 3 4 5 6 7 8 9 10 ，你可能会说，first会一直向后移动直到超出范围。不会，因为pivot取的是中值，上述例子中first会在5这个位置停下，三值取中法。</span></span><br><span class="line"><span class="comment">(2) 源代码和我写的不一样，用的是&lt;(&gt;),不像我的代码中用的&lt;=(&gt;=)，这个时候会在pivot的时候停下来，结束循环。如果是0 2 5 16 11 7 9 1 4 19， pivot是11的话，first会指向16，last会指向4，交换之后变成0 2 5 4 11 7 9 1 16 19，之后first会在pivot的时候停下来，而last指向1，交换后变成0 2 5 4 1 7 9 11 16 19，first又会在11这个地方停下来，而左边肯定会有比pivot小的数，last也会停下来，这时候已经交叉return了。</span></span><br><span class="line"><span class="comment">可能讲的不是很清楚，在本子上多举几个例子运行一边便会觉得十分精妙。last肯定会在左边停下来，因为左边基本是比pivot小的值了，first肯定会在右边停下来，同理。一个小小的小于大于号，竟然如此巧妙。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 4 partial_sort()和__partial_sort()  堆排</span></span><br><span class="line"><span class="comment">//sort中的__introsort_loop调用partial_sort，而partial_sort调用__partial_sort </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//后调用：__partial_sort()</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">RandomAccessIterator</span>, <span class="title">class</span> <span class="title">T</span>, <span class="title">class</span> <span class="title">Compare</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> __<span class="title">partial_sort</span>(<span class="title">RandomAccessIterator</span> <span class="title">first</span>, <span class="title">RandomAccessIterator</span> <span class="title">middle</span>,</span></span><br><span class="line"><span class="class">                    <span class="title">RandomAccessIterator</span> <span class="title">last</span>, <span class="title">T</span>*, <span class="title">Compare</span> <span class="title">comp</span>) </span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    make_heap(first, middle, comp);<span class="comment">//对原始容器内区间为[first, middle)的元素运行make_heap()操作构造一个最大堆 那么头元素为最大值 即下面的*first 此时为堆序</span></span><br><span class="line">    <span class="keyword">for</span> (RandomAccessIterator i = middle; i &lt; last; ++i)</span><br><span class="line">        <span class="keyword">if</span> (comp(*i, *first))  <span class="comment">//将middle到last的元素与对顶元素进行比较</span></span><br><span class="line">            __pop_heap(first, middle, i, T(*i), comp, distance_type(first));</span><br><span class="line">  <span class="comment">//如果小于该值，就互换位置并重新保持 max-heap 状态</span></span><br><span class="line">    sort_heap(first, middle, comp); <span class="comment">//此时为增序</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//先调用：partial_sort()</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">RandomAccessIterator</span>, <span class="title">class</span> <span class="title">Compare</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">inline</span> <span class="title">void</span> <span class="title">partial_sort</span>(<span class="title">RandomAccessIterator</span> <span class="title">first</span>,</span></span><br><span class="line"><span class="class">                         <span class="title">RandomAccessIterator</span> <span class="title">middle</span>,</span></span><br><span class="line"><span class="class">                         <span class="title">RandomAccessIterator</span> <span class="title">last</span>, <span class="title">Compare</span> <span class="title">comp</span>) &#123;</span></span><br><span class="line">    __partial_sort(first, middle, last, value_type(first), comp);<span class="comment">//主体</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// __pop_heap()</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">RandomAccessIterator</span>, <span class="title">class</span> <span class="title">T</span>, <span class="title">class</span> <span class="title">Distance</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">inline</span> <span class="title">void</span> __<span class="title">pop_heap</span>(<span class="title">RandomAccessIterator</span> <span class="title">first</span>, <span class="title">RandomAccessIterator</span> <span class="title">last</span>,</span></span><br><span class="line"><span class="class">                       <span class="title">RandomAccessIterator</span> <span class="title">result</span>, <span class="title">T</span> <span class="title">value</span>, <span class="title">Distance</span>*) &#123;</span></span><br><span class="line">  *result = *first; <span class="comment">// 弹出元素放vector尾端</span></span><br><span class="line">  __adjust_heap(first, Distance(<span class="number">0</span>), Distance(last - first), value);<span class="comment">//保持最大堆</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">__partial_sort():当需要对某个区间进行排序的时候，将调用时的参数改成(first，last，last)就可以了。从最初的调用到make_heap(),其实原型都是(first，last，last)。</span></span><br><span class="line"><span class="comment">虽然上述的参数直接实现了堆排，但是我另外说一下。在__partial_sort()中可以看到make_heap(参数1，参数2),是从[参数1,参数2]的区间做一次build_heap()（我的代码中的函数），函数完成之后就是一个最大堆，元素顺序为堆序。之后拿[middle,last]区间的元素对首元素进行比较,若小，进行一次__pop_heap()。__pop_heap()中就是将首元素取出来放在[middle,last]区间的最后，再将[middle,last]区间的首元素覆盖最大堆的首元素，此时最大堆已经不是最大堆，要进行heapify(我的代码中的函数)，即__adjust_heap()。</span></span><br><span class="line"><span class="comment">之后的sort_heap是将最大堆的堆序调成为升序。即我的代码中sort_heap()中的循环。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">起先我感觉：这个for循环有一点多余(当然，这个函数并不只是只用在sort里面被调用)，它是对整个[first,last]区间进行造堆，那么顶元素肯定是最大值啊，middle后的区间完全没必要比。</span></span><br><span class="line"><span class="comment">后来：for循环的条件直接跳过了。middle就是last</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">下有参考链接。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://www.2cto.com/kf/201407/318957.html" target="_blank" rel="noopener">__partial_sort参考网址入口</a><br><a href="https://www.cnblogs.com/bhlsheji/p/5276771.html" target="_blank" rel="noopener">参考2</a> </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 5  __final_insertion_sort()------------------&gt;__unguarded_linear_insert()</span></span><br><span class="line"><span class="comment">//    |_-&gt; __insertion_sort()-&gt;__linear_insert-&gt;__unguarded_linear_insert()</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//__final_insertion_sort() sort调用：  插排阅读顺序(1) </span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">RandomAccessIterator</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> __<span class="title">final_insertion_sort</span>(<span class="title">RandomAccessIterator</span> <span class="title">first</span>, </span></span><br><span class="line"><span class="class">                            <span class="title">RandomAccessIterator</span> <span class="title">last</span>)</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">if</span> (last - first &gt; __stl_threshold) &#123;</span><br><span class="line">        __insertion_sort(first, first + __stl_threshold);</span><br><span class="line">        __unguarded_insertion_sort(first + __stl_threshold, last);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        __insertion_sort(first, last);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//__unguarded_linear_insert() 插排阅读顺序(4)</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">RandomAccessIterator</span>, <span class="title">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> __<span class="title">unguarded_linear_insert</span>(<span class="title">RandomAccessIterator</span> <span class="title">last</span>, <span class="title">T</span> <span class="title">value</span>) &#123;</span></span><br><span class="line">    RandomAccessIterator next = last;</span><br><span class="line">    --next;</span><br><span class="line">    <span class="keyword">while</span> (value &lt; *next) &#123;</span><br><span class="line">        *last = *next;</span><br><span class="line">        last = next;</span><br><span class="line">        --next;</span><br><span class="line">    &#125;</span><br><span class="line">    *last = value;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//__linear_insert() 插排阅读顺序(3)</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">RandomAccessIterator</span>, <span class="title">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">inline</span> <span class="title">void</span> __<span class="title">linear_insert</span>(<span class="title">RandomAccessIterator</span> <span class="title">first</span>, </span></span><br><span class="line"><span class="class">                            <span class="title">RandomAccessIterator</span> <span class="title">last</span>, <span class="title">T</span>*) &#123;</span></span><br><span class="line">    T value = *last;</span><br><span class="line">    <span class="keyword">if</span> (value &lt; *first) &#123;</span><br><span class="line">        copy_backward(first, last, last + <span class="number">1</span>);</span><br><span class="line">        *first = value;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        __unguarded_linear_insert(last, value);<span class="comment">//调__unguarded_linear_insert（）</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//__insertion_sort()  插排阅读顺序(2)</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">RandomAccessIterator</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> __<span class="title">insertion_sort</span>(<span class="title">RandomAccessIterator</span> <span class="title">first</span>, <span class="title">RandomAccessIterator</span> <span class="title">last</span>) &#123;</span></span><br><span class="line">    <span class="keyword">if</span> (first == last) <span class="keyword">return</span>; </span><br><span class="line">    <span class="keyword">for</span> (RandomAccessIterator i = first + <span class="number">1</span>; i != last; ++i)</span><br><span class="line">        __linear_insert(first, i, value_type(first)); <span class="comment">//调用__linear_insert()</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*文章将的很清楚，没有什么特别的理解了</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="万事具备"><a href="#万事具备" class="headerlink" title="万事具备"></a>万事具备</h1><p>学了，那就自己敲一下吧，用数组简单实现</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//先是写了快排   第一版本</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"help.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1000</span>];</span><br><span class="line"><span class="keyword">int</span> len = <span class="number">1000</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//快排</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> first ,<span class="keyword">int</span> last, <span class="keyword">int</span> pivot)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(a[first]&lt;pivot) ++first;</span><br><span class="line">        --last;</span><br><span class="line">        <span class="keyword">while</span>(a[last]&gt;pivot)  --last;</span><br><span class="line">        <span class="keyword">if</span>(!(first&lt;last)) <span class="keyword">return</span> first;</span><br><span class="line">        swap(a[first],a[last]);</span><br><span class="line">        ++first;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">myintrosort_loop</span><span class="params">(<span class="keyword">int</span> first ,<span class="keyword">int</span> last)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>( last-first&gt;<span class="number">1</span> )  <span class="comment">//没有加上插排的时候，这么写。如果写成first&lt;last会 死递归</span></span><br><span class="line">    &#123;                                                      </span><br><span class="line">        <span class="keyword">int</span> mid_value = get_mid_value( a[first], a[last<span class="number">-1</span>], a[(first+last)/<span class="number">2</span>] );<span class="comment">//三值取中法 调用函数 我写在了help.h文件里 我就没有粘出来了</span></span><br><span class="line">        <span class="keyword">int</span> cut = quick_sort(first , last , mid_value);</span><br><span class="line">        myintrosort_loop(cut,last);</span><br><span class="line">        last = cut;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mysort</span><span class="params">(<span class="keyword">int</span> first ,<span class="keyword">int</span> last)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    myintrosort_loop(first,last); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">    srand(time(<span class="literal">NULL</span>));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">        a[i] = rand();</span><br><span class="line"></span><br><span class="line">    mysort(<span class="number">0</span>,len);  <span class="comment">//开始sort</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i:a)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//堆排测试  __begin()</span></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100</span>],len=<span class="number">100</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">heapify</span><span class="params">(<span class="keyword">int</span> first,<span class="keyword">int</span> last,<span class="keyword">int</span> pa)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pa&gt;=last) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">int</span> lson = first + <span class="number">2</span>*(pa-first)+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> rson = first + <span class="number">2</span>*(pa-first)+<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> maxn = pa;</span><br><span class="line">    <span class="keyword">if</span>(lson&lt;last&amp;&amp;a[lson]&gt;a[maxn]) maxn = lson;</span><br><span class="line">    <span class="keyword">if</span>(rson&lt;last&amp;&amp;a[rson]&gt;a[maxn]) maxn = rson;</span><br><span class="line">    <span class="keyword">if</span>(pa!=maxn) &#123;</span><br><span class="line">        swap(a[maxn],a[pa]);</span><br><span class="line">        heapify(first, last ,maxn);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">heap_build</span><span class="params">(<span class="keyword">int</span> first,<span class="keyword">int</span> last)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> lastnode = last<span class="number">-1</span>;<span class="comment">//最后一个节点</span></span><br><span class="line">    <span class="keyword">int</span> startpa = first+(lastnode-first<span class="number">-1</span>)/<span class="number">2</span>; <span class="comment">//最后一个父节点</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=startpa; i&gt;=first; i--) <span class="comment">//逆序对每一个父节点做heapify</span></span><br><span class="line">        heapify(first,last,i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">heap_sort</span><span class="params">(<span class="keyword">int</span> first ,<span class="keyword">int</span> last)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    heap_build(first,last);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=last<span class="number">-1</span>;i&gt;=first;i--)</span><br><span class="line">    &#123;</span><br><span class="line">        swap(a[first],a[i]);</span><br><span class="line">        heapify(first,i,first);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  	srand(time(<span class="literal">NULL</span>));</span><br><span class="line">  	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">    		a[i] = rand();</span><br><span class="line">  </span><br><span class="line">  	heap_sort(<span class="number">90</span>,<span class="number">101</span>);<span class="comment">//在区间[90,100]进行堆排 左闭右开区间，所有last要+1</span></span><br><span class="line">  	</span><br><span class="line">  	<span class="keyword">for</span>(<span class="keyword">int</span> i:a)</span><br><span class="line">      	<span class="built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">  </span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//  __end</span></span><br><span class="line">  						 <span class="comment">/*将两个函数整合到里面去*/</span></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">10000</span>];</span><br><span class="line"><span class="keyword">int</span> len = <span class="number">10000</span>;</span><br><span class="line"><span class="comment">//////////////////////////堆排__start() 实现一个区间堆排</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">heapify</span><span class="params">(<span class="keyword">int</span> first,<span class="keyword">int</span> last,<span class="keyword">int</span> pa)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pa&gt;=last) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">int</span> lson = first + <span class="number">2</span>*(pa-first)+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> rson = first + <span class="number">2</span>*(pa-first)+<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> maxn = pa;</span><br><span class="line">    <span class="keyword">if</span>(lson&lt;last&amp;&amp;a[lson]&gt;a[maxn]) maxn = lson;</span><br><span class="line">    <span class="keyword">if</span>(rson&lt;last&amp;&amp;a[rson]&gt;a[maxn]) maxn = rson;</span><br><span class="line">    <span class="keyword">if</span>(pa!=maxn) &#123;</span><br><span class="line">        swap(a[maxn],a[pa]);</span><br><span class="line">        heapify(first, last ,maxn);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">heap_build</span><span class="params">(<span class="keyword">int</span> first,<span class="keyword">int</span> last)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> lastnode = last<span class="number">-1</span>;<span class="comment">//最后一个节点</span></span><br><span class="line">    <span class="keyword">int</span> startpa = first+(lastnode-first<span class="number">-1</span>)/<span class="number">2</span>; <span class="comment">//最后一个父节点</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=startpa; i&gt;=first; i--) <span class="comment">//逆序对每一个父节点做heapify</span></span><br><span class="line">        heapify(first,last,i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">heap_sort</span><span class="params">(<span class="keyword">int</span> first ,<span class="keyword">int</span> last)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    heap_build(first,last);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=last<span class="number">-1</span>;i&gt;=first;i--)</span><br><span class="line">    &#123;</span><br><span class="line">        swap(a[first],a[i]);</span><br><span class="line">        heapify(first,i,first);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//////////////////////////堆排__end()</span></span><br><span class="line"></span><br><span class="line"><span class="comment">////////////////////////////快排 __begin</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> first ,<span class="keyword">int</span> last, <span class="keyword">int</span> pivot)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(a[first]&lt;pivot) ++first;</span><br><span class="line">        --last;</span><br><span class="line">        <span class="keyword">while</span>(a[last]&gt;pivot)  --last;</span><br><span class="line">        <span class="keyword">if</span>(!(first&lt;last)) <span class="keyword">return</span> first;</span><br><span class="line">        swap(a[first],a[last]);</span><br><span class="line">        ++first;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">////////////////////////////快排 __end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">myintrosort_loop</span><span class="params">(<span class="keyword">int</span> first ,<span class="keyword">int</span> last,<span class="keyword">int</span> depth_limit)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>( last-first&gt;<span class="number">1</span> )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(depth_limit==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            heap_sort(first,last);</span><br><span class="line">            <span class="comment">//make_heap(&amp;a[first],&amp;a[last]);  //I'm here. 堆排的调用</span></span><br><span class="line">          	<span class="comment">/*想整合自己的函数进去，发现竟然也不是易事，这个函数可以实现区间造堆，</span></span><br><span class="line"><span class="comment">          	又有研究的东西了*/</span></span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        depth_limit--;</span><br><span class="line">        <span class="keyword">int</span> mid_value = get_mid_value( a[first], a[last<span class="number">-1</span>], a[(first+last)/<span class="number">2</span>] );<span class="comment">//三值取中法 调用函数</span></span><br><span class="line">        <span class="keyword">int</span> cut = quick_sort(first , last , mid_value);</span><br><span class="line">        myintrosort_loop(cut,last,depth_limit);</span><br><span class="line">        last = cut;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mysort</span><span class="params">(<span class="keyword">int</span> first ,<span class="keyword">int</span> last)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> depth_limit = get_depth_limit(last,first); <span class="comment">//获取深度阈值 调用函数</span></span><br><span class="line">    myintrosort_loop(first,last,depth_limit);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">    srand(time(<span class="literal">NULL</span>));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">        a[i] = rand();</span><br><span class="line"></span><br><span class="line">    mysort(<span class="number">0</span>,len);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i:a)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//插排的整合之后再更新</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>看完之后，这里我有两个问题，<br>1.就是(2)一旦分段后的数据量小于某个阈值，就改用插入排序，因为此时这个分段是基本有序的，这时效率可达O(N)。<br>这个到底是什么意思，是a[15]的时候直接调用插排，还是说a[10000]在快排递归，区段小于16的时候调用插排。如果是第二种，插排是在sort()函数里面的，也就是说在introsort_loop()执行完之后才开始调用。如果他是在intro_loop()函数里调用了，那我认为要在while(){}后面加上插排的调用代码。<br>2.还有，插排的里是分段的，&gt;16是一段，小于是一段，分段处理。从introsort_loop()出来之后肯定是&lt;=16的，为什么要分这个段呢，没必要啊。我的想法是这个插排的函数不只是由sort()调用，其他也会调用这个函数，所以才这么写<br>希望解答…….</strong> </p>
+<hr>
+<p>本文是自己的学习记录，读者可参考，仅供参考<br>不完善的地方请指正</p>
+<p>欢迎来小站一逛 <a href="https://codesniperyang.github.io/" target="_blank" rel="noopener">戳一下</a> </p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="\assets\img\alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="\assets\img\weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/06/STL-sort/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/30/c++newfeatures/" class="archive-article-date">
-  	<time datetime="2020-06-30T14:15:37.723Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-30</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/30/c++newfeatures/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">c++新特性学习笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/30/c++newfeatures/">c++新特性学习笔记</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/20/BigDecimal_and_BigInteger/" class="archive-article-date">
-  	<time datetime="2020-05-20T13:43:33.553Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/20/BigDecimal_and_BigInteger/">大数和高精度运算</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/15/su/" class="archive-article-date">
-  	<time datetime="2020-05-15T12:07:24.702Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/15/su/">云想衣裳花想容</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/14/static/" class="archive-article-date">
-  	<time datetime="2020-05-14T13:42:28.918Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/14/static/">C++中static的学习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/13/operator/" class="archive-article-date">
-  	<time datetime="2020-05-13T15:05:03.651Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/13/operator/">运算符重载C++</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/11/use-vim/" class="archive-article-date">
-  	<time datetime="2020-05-11T13:23:12.028Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/11/use-vim/">vim以及其他常用命令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/11/learnJava/" class="archive-article-date">
-  	<time datetime="2020-05-11T12:03:16.224Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/11/learnJava/">Java 学习笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/09/build-blog/" class="archive-article-date">
-  	<time datetime="2020-05-09T12:22:14.247Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/09/build-blog/">搭建个人博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/09/hello-world/" class="archive-article-date">
-  	<time datetime="2020-05-09T12:12:03.006Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/09/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -460,8 +389,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
